@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b14">
+  <title>Webora AI — Build Something Amazing</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-icon">W</span>
+      <span>webora<span class="accent">.ai</span></span>
+    </a>
+    <span class="status"><span class="status-dot"></span> AI WEBSITE STUDIO</span>
+  </header>
+
+  <main class="layout">
+    <section class="hero">
+      <div class="eyebrow">✦ YOUR IDEAS, BUILT WITH AI</div>
+      <h1>Imagine it.<br><span class="gradient-text">Build it.</span></h1>
+      <p class="subtitle">
+        Describe your dream website. Webora AI turns your idea into
+        a custom website you can preview, edit and download.
+      </p>
+    </section>
+
+    <section class="workspace">
+      <div class="form-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="step-label">01 / YOUR IDEA</span>
+            <h2>What are we creating?</h2>
+          </div>
+          <span class="sparkle">✳</span>
+        </div>
+
+        <label for="prompt">Describe your website</label>
+        <textarea id="prompt" rows="5"
+          placeholder="A modern portfolio for an AI developer with animated cards, a dark theme, project gallery and contact section..."></textarea>
+
+        <div class="examples">
+          <button type="button" class="example"
+            data-prompt="A modern portfolio for a student learning Python and AI, with project cards, an about section and contact links.">Developer portfolio</button>
+          <button type="button" class="example"
+            data-prompt="A beautiful bakery website with a menu, product cards, opening hours and a contact section.">Bakery website</button>
+          <button type="button" class="example"
+            data-prompt="A futuristic AI startup landing page with a hero section, features, pricing and FAQ.">AI startup</button>
+        </div>
+
+        <div class="options-grid">
+          <div class="field">
+            <label for="style">Visual style</label>
+            <select id="style">
+              <option value="modern dark">Modern dark</option>
+              <option value="minimal and clean">Minimal and clean</option>
+              <option value="colorful and playful">Colorful and playful</option>
+              <option value="luxury and elegant">Luxury and elegant</option>
+              <option value="futuristic neon">Futuristic neon</option>
+              <option value="soft pastel">Soft pastel</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="pages">Website size</label>
+            <select id="pages">
+              <option value="1">Single page</option>
+              <option value="3">Small website</option>
+              <option value="5">Large website</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="generateBtn" class="generate-btn" type="button">
+          <span id="buttonText">✦ Generate my website</span>
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <p class="privacy-note">Your idea deserves a great design ✨</p>
+        <p id="message" class="message" role="status"></p>
+      </div>
+
+      <div class="preview-panel">
+        <div class="preview-top">
+          <div>
+            <span class="step-label">02 / LIVE PREVIEW</span>
+            <h2>Your creation</h2>
+          </div>
+          <span id="previewStatus" class="preview-status">Waiting for idea</span>
+        </div>
+
+        <div class="browser">
+          <div class="browser-bar">
+            <div class="browser-dots"><i></i><i></i><i></i></div>
+            <div class="browser-address">your-website.preview</div>
+          </div>
+          <div class="preview-content">
+            <div id="emptyState" class="empty-state">
+              <div class="empty-icon">✧</div>
+              <h3>Your canvas is waiting</h3>
+              <p>Describe your idea and generate your first website.</p>
+            </div>
+            <iframe id="preview" title="Generated website preview"
+              sandbox="allow-scripts"
+              hidden></iframe>
+          </div>
+        </div>
+
+        <div class="output-actions">
+          <button id="viewCodeBtn" class="secondary-btn" disabled>View code</button>
+          <button id="downloadBtn" class="secondary-btn" disabled>↓ Download ZIP</button>
+        </div>
+        <p class="preview-footnote">Generated websites run in an isolated preview.</p>
+      </div>
+    </section>
+
+    <section id="codeSection" class="code-section" hidden>
+      <div class="code-heading">
+        <div>
+          <span class="step-label">03 / YOUR CODE</span>
+          <h2>Under the hood</h2>
+        </div>
+        <button id="copyBtn" class="secondary-btn">Copy code</button>
+      </div>
+      <div class="code-tabs" id="codeTabs"></div>
+      <pre class="code-box"><code id="codeOutput"></code></pre>
+    </section>
+
+    <footer>
+      <span>WEBORA AI</span>
+      <span>Made for curious minds ✦</span>
+    </footer>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
